@@ -1,2 +1,4 @@
+com/SpringPractice/springboot/web/dto/HelloResponseDtoTest.java
+ com.SpringPractice.springboot.web.dto.HelloResponseDtoTest
 com/SpringPractice/springboot/HelloControllerTest.java
  com.SpringPractice.springboot.HelloControllerTest
