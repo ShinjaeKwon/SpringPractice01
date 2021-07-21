@@ -1,5 +1,6 @@
 package com.SpringPractice.springboot.web.dto;
 
+
 import com.SpringPractice.springboot.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
