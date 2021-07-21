@@ -59,7 +59,7 @@ public class PostsRepositoryTest {
         LocalDateTime now = LocalDateTime.of(2019,6,4,0,0,0);
         postsRepository.save(Posts.builder().title("title").content("content").author("author").build());
 
-        //when
+        //when`
         List<Posts> postsList = postsRepository.findAll();
 
         //then
