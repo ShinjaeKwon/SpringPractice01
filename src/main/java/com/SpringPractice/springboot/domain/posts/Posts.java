@@ -1,4 +1,5 @@
 package com.SpringPractice.springboot.domain.posts;
+import com.SpringPractice.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,7 @@ import javax.persistence.Id;
 //테이블과 링크될 클래스임을 나타낸다.
 //기본값으로 클래스의 카멜케이스 이름을 언더스코어 네이밍(_)으로 테이블 이름을 매칭한다.
 //ex) SalesManager.java -> sales_manager table
-public class Posts {
+public class Posts extends BaseTimeEntity {
     //Entity 메서드에서는 절대 Setter 메서드를 만들지 않는다.
     //대신 해당 필드의 값 변경이 필요하면 명확히 그 목적과 의도를 나타낼 수 있는 메서드를 추가해야만 한다.
 
