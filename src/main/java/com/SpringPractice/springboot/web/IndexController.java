@@ -1,5 +1,6 @@
 package com.SpringPractice.springboot.web;
 
+import com.SpringPractice.springboot.config.auth.LoginUser;
 import com.SpringPractice.springboot.config.auth.dto.SessionUser;
 import com.SpringPractice.springboot.service.posts.PostsService;
 import com.SpringPractice.springboot.web.dto.PostsResponseDto;
@@ -18,10 +19,12 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model)
-    {
+    public String index(Model model, @LoginUser SessionUser user) {
+        //@LoginUser SessionUser user
+        //기존의 (User) httpSession.getAttribute("user")로 가져오던 세션 정보 값이 개선되었다.
+        //이제는 어느 컨트롤러든지 @LoginUser만 사용하면 세션 정보를 가져올 수 있게 된다.
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+       /* SessionUser user = (SessionUser) httpSession.getAttribute("user");*/
         //(SessionUser) httpSession.getAttribute("user");
         //앞서 작성된 CustomOAuth2UserService에서 로그인 성공 시 세션에 SessionUser를 저장하도록 구성
         //즉 로그인 성공시, httpSession.getAttribute("user")에서 값을 가져올 수 있다.
